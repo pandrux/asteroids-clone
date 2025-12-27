@@ -106,6 +106,24 @@ public static class VectorShapes
         new Vector2(0, 15),
         new Vector2(-15, 0)
     };
+
+    // Companion drone shape (diamond with trailing fins, pointing right)
+    public static List<Vector2> CompanionDroneShape => new List<Vector2>
+    {
+        new Vector2(8, 0),   // Nose
+        new Vector2(0, -5),  // Top
+        new Vector2(-6, 0),  // Back
+        new Vector2(0, 5)    // Bottom
+    };
+
+    // Companion drone fins (separate for multi-line drawing)
+    public static List<Vector2> CompanionDroneFins => new List<Vector2>
+    {
+        new Vector2(-6, 0),   // Fin start
+        new Vector2(-10, -3), // Left fin tip
+        new Vector2(-6, 0),   // Return
+        new Vector2(-10, 3)   // Right fin tip
+    };
 }
 
 

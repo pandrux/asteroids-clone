@@ -185,7 +185,16 @@ public static class VectorRenderer
     {
         DrawShape(VectorShapes.PowerUpShape, position, 0, color);
     }
-    
+
+    public static void DrawCompanionDrone(Vector2 position, float rotation)
+    {
+        Color cyan = Color.Cyan;
+        // Draw main diamond body
+        DrawShape(VectorShapes.CompanionDroneShape, position, rotation, cyan);
+        // Draw fins (not closed polygon)
+        DrawShape(VectorShapes.CompanionDroneFins, position, rotation, cyan, closed: false);
+    }
+
     public static void DrawCircle(Vector2 center, float radius, Color color, int segments = 32)
     {
         for (int i = 0; i < segments; i++)

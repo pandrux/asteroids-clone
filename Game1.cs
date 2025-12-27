@@ -123,6 +123,10 @@ public class Game1 : Game
             _uiManager.ResetSettingsMenu();
             _currentState = GameStateEnum.Settings;
         }
+        if (InputManager.IsPressed(Keys.Escape))
+        {
+            Exit();
+        }
     }
 
     private void UpdateSettings(float deltaTime)
@@ -211,7 +215,36 @@ public class Game1 : Game
         {
             drone.Update(deltaTime);
         }
-        
+
+        // Update companion drone
+        if (GameState.Companion != null && GameState.Companion.IsActive)
+        {
+            GameState.Companion.Update(deltaTime);
+
+            // Cycle drone strategies with number keys
+            if (InputManager.IsPressed(Keys.D1))
+            {
+                var current = GameState.Companion.Strategy.Positioning;
+                var values = Enum.GetValues<Entities.PositioningMode>();
+                int next = ((int)current + 1) % values.Length;
+                GameState.Companion.Strategy.Positioning = values[next];
+            }
+            if (InputManager.IsPressed(Keys.D2))
+            {
+                var current = GameState.Companion.Strategy.Targeting;
+                var values = Enum.GetValues<Entities.TargetingMode>();
+                int next = ((int)current + 1) % values.Length;
+                GameState.Companion.Strategy.Targeting = values[next];
+            }
+            if (InputManager.IsPressed(Keys.D3))
+            {
+                var current = GameState.Companion.Strategy.Behavior;
+                var values = Enum.GetValues<Entities.BehaviorMode>();
+                int next = ((int)current + 1) % values.Length;
+                GameState.Companion.Strategy.Behavior = values[next];
+            }
+        }
+
         // Collision detection
         _collisionSystem.Update();
         
@@ -275,6 +308,14 @@ public class Game1 : Game
         // Give player initial spawn invulnerability (like classic Asteroids)
         GameState.Player.IsInvulnerable = true;
         GameState.Player.InvulnerabilityTimer = 2.0f;
+
+        // Create companion drone
+        GameState.Companion = new Entities.CompanionDrone
+        {
+            Position = GameState.Player.Position + new Vector2(80, 0),
+            IsActive = true
+        };
+
         GameState.CurrentWave = 1;
         _waveManager.Reset();
         _waveManager.StartWave(GameState.CurrentWave);
@@ -405,6 +446,15 @@ public class Game1 : Game
                 drone.Radius,
                 Color.Red,
                 12
+            );
+        }
+
+        // Draw companion drone
+        if (GameState.Companion != null && GameState.Companion.IsActive)
+        {
+            Rendering.VectorRenderer.DrawCompanionDrone(
+                GameState.Companion.Position,
+                GameState.Companion.Rotation
             );
         }
     }

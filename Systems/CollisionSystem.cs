@@ -124,6 +124,30 @@ public class CollisionSystem
                 }
             }
         }
+
+        // Companion Drone vs Asteroids
+        if (GameState.Companion != null && GameState.Companion.IsActive)
+        {
+            foreach (var asteroid in GameState.Asteroids.Where(a => a.IsActive).ToList())
+            {
+                if (GameState.Companion.CollidesWith(asteroid))
+                {
+                    HandleCompanionAsteroidCollision(asteroid);
+                }
+            }
+        }
+
+        // Companion Drone vs Enemy Bullets
+        if (GameState.Companion != null && GameState.Companion.IsActive)
+        {
+            foreach (var bullet in GameState.EnemyBullets.Where(b => b.IsActive).ToList())
+            {
+                if (GameState.Companion.CollidesWith(bullet))
+                {
+                    HandleCompanionBulletCollision(bullet);
+                }
+            }
+        }
     }
     
     private void HandleBulletAsteroidCollision(Bullet bullet, Asteroid asteroid)
@@ -270,6 +294,23 @@ public class CollisionSystem
         {
             TriggerShake(0.15f, 6f);
         }
+    }
+
+    private void HandleCompanionAsteroidCollision(Asteroid asteroid)
+    {
+        // Companion drone is destroyed on asteroid collision
+        ParticleSystem.Instance?.CreateExplosion(GameState.Companion.Position, 15f, Color.Cyan);
+        GameState.Companion.IsActive = false;
+        TriggerShake(0.2f, 8f);
+    }
+
+    private void HandleCompanionBulletCollision(Bullet bullet)
+    {
+        bullet.IsActive = false;
+        // Companion drone is destroyed on bullet hit
+        ParticleSystem.Instance?.CreateExplosion(GameState.Companion.Position, 15f, Color.Cyan);
+        GameState.Companion.IsActive = false;
+        TriggerShake(0.2f, 8f);
     }
 }
 

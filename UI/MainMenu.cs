@@ -33,37 +33,37 @@ public class MainMenu
         Vector2 titleSize = _font.MeasureString(title);
         Vector2 titlePos = new Vector2(
             GameState.ScreenWidth / 2 - titleSize.X / 2,
-            GameState.ScreenHeight / 2 - 100
+            GameState.ScreenHeight / 2 - 180
         );
         spriteBatch.DrawString(_font, title, titlePos, Color.White);
-        
+
         // Instructions
         string instructions = "Press ENTER to Start";
         Vector2 instSize = _font.MeasureString(instructions);
         Vector2 instPos = new Vector2(
             GameState.ScreenWidth / 2 - instSize.X / 2,
-            GameState.ScreenHeight / 2
+            GameState.ScreenHeight / 2 - 80
         );
-        
+
         // Blinking effect
         Color color = ((int)(_blinkTimer * 2) % 2 == 0) ? Color.White : Color.Gray;
         spriteBatch.DrawString(_font, instructions, instPos, color);
-        
+
         // Controls
         string controls = "Arrow Keys: Move | Space: Fire | Shift: Shield | H: Hyperspace";
         Vector2 ctrlSize = _font.MeasureString(controls);
         Vector2 ctrlPos = new Vector2(
             GameState.ScreenWidth / 2 - ctrlSize.X / 2,
-            GameState.ScreenHeight / 2 + 50
+            GameState.ScreenHeight / 2 - 30
         );
         spriteBatch.DrawString(_font, controls, ctrlPos, Color.Gray);
 
         // Settings hint
-        string settings = "S - Settings";
+        string settings = "S - Settings  |  ESC - Exit";
         Vector2 settingsSize = _font.MeasureString(settings);
         Vector2 settingsPos = new Vector2(
             GameState.ScreenWidth / 2 - settingsSize.X / 2,
-            GameState.ScreenHeight / 2 + 100
+            GameState.ScreenHeight / 2 + 20
         );
         spriteBatch.DrawString(_font, settings, settingsPos, Color.Gray);
 
@@ -73,7 +73,7 @@ public class MainMenu
 
     private void DrawLeaderboard(SpriteBatch spriteBatch)
     {
-        float startY = GameState.ScreenHeight / 2 + 150;
+        float startY = GameState.ScreenHeight / 2 + 70;
         float centerX = GameState.ScreenWidth / 2f;
 
         // Title
@@ -88,7 +88,7 @@ public class MainMenu
             var entry = leaderboard[i];
             string line = $"{i + 1,2}. {entry.Initials}  {entry.Score,7}";
             Vector2 lineSize = _font.MeasureString(line);
-            float y = startY + 30 + (i * 22);
+            float y = startY + 28 + (i * 20);
             spriteBatch.DrawString(_font, line, new Vector2(centerX - lineSize.X / 2, y), Color.White);
         }
 
@@ -97,7 +97,7 @@ public class MainMenu
         {
             string noScores = "No scores yet!";
             Vector2 noScoresSize = _font.MeasureString(noScores);
-            spriteBatch.DrawString(_font, noScores, new Vector2(centerX - noScoresSize.X / 2, startY + 30), Color.Gray);
+            spriteBatch.DrawString(_font, noScores, new Vector2(centerX - noScoresSize.X / 2, startY + 28), Color.Gray);
         }
     }
 }

@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using AsteroidsClone.Core;
+using AsteroidsClone.Entities;
 
 namespace AsteroidsClone.UI;
 
@@ -57,6 +58,34 @@ public class HUD
         {
             DrawBuffs(spriteBatch, new Vector2(10, 130), GameState.Player.Buffs);
         }
+
+        // Drone strategy display (bottom-right)
+        if (GameState.Companion != null && GameState.Companion.IsActive)
+        {
+            DrawDroneStrategy(spriteBatch);
+        }
+    }
+
+    private void DrawDroneStrategy(SpriteBatch spriteBatch)
+    {
+        var strategy = GameState.Companion.Strategy;
+
+        string line1 = $"[1] Position: {strategy.Positioning}";
+        string line2 = $"[2] Target: {strategy.Targeting}";
+        string line3 = $"[3] Behavior: {strategy.Behavior}";
+
+        // Calculate position (bottom-right)
+        float maxWidth = MathHelper.Max(
+            _font.MeasureString(line1).X,
+            MathHelper.Max(_font.MeasureString(line2).X, _font.MeasureString(line3).X)
+        );
+
+        float x = GameState.ScreenWidth - maxWidth - 15;
+        float y = GameState.ScreenHeight - 80;
+
+        spriteBatch.DrawString(_font, line1, new Vector2(x, y), Color.Cyan);
+        spriteBatch.DrawString(_font, line2, new Vector2(x, y + 22), Color.Cyan);
+        spriteBatch.DrawString(_font, line3, new Vector2(x, y + 44), Color.Cyan);
     }
     
     private void DrawPowerBar(SpriteBatch spriteBatch, Vector2 position, float width, float height, Systems.PowerSystem power)

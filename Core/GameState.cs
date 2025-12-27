@@ -9,6 +9,7 @@ public static class GameState
 {
     // Entity collections
     public static Ship Player;
+    public static CompanionDrone Companion;
     public static List<Asteroid> Asteroids = new();
     public static List<Bullet> PlayerBullets = new();
     public static List<Bullet> EnemyBullets = new();
@@ -73,6 +74,7 @@ public static class GameState
         CurrentWave = 0;
         ScoreMultiplier = 1.0f;
         _extraLivesAwarded = 0;
+        Companion = null;
         ClearAllEntities();
     }
     
