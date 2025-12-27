@@ -1,0 +1,46 @@
+{
+  "dropChance": 0.15,
+  "lifetime": 10.0,
+  "powerUps": {
+    "multiShot": {
+      "duration": 15.0,
+      "bulletCount": 3
+    },
+    "piercing": {
+      "duration": 20.0
+    },
+    "rapidFire": {
+      "duration": 15.0,
+      "cooldownMultiplier": 0.5
+    },
+    "damageBoost": {
+      "duration": 20.0,
+      "multiplier": 2.0
+    },
+    "shieldBoost": {
+      "duration": 3.0
+    },
+    "healthRegen": {
+      "livesRestored": 1
+    },
+    "invulnerability": {
+      "duration": 5.0
+    },
+    "powerRecharge": {
+      "amount": 50.0
+    },
+    "speedBoost": {
+      "duration": 15.0,
+      "multiplier": 1.5
+    },
+    "scoreMultiplier": {
+      "duration": 30.0,
+      "multiplier": 2.0
+    },
+    "extraLife": {
+      "livesAdded": 1
+    }
+  }
+}
+
+

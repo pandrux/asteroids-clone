@@ -1,0 +1,26 @@
+{
+  "baseAsteroidCount": 4,
+  "asteroidCountPerWave": 1,
+  "wavesPerAsteroidIncrease": 2,
+  "bossWaveInterval": 5,
+  "ufoSpawnRates": {
+    "large": 2,
+    "small": 3,
+    "hunter": 4,
+    "bomber": 6,
+    "shielded": 8,
+    "phase": 10,
+    "carrier": 12
+  },
+  "difficultyScaling": {
+    "asteroidSpeedMultiplier": 0.05,
+    "ufoSpawnRateMultiplier": 0.02,
+    "overallDifficultyMultiplier": 0.1
+  },
+  "modifiers": {
+    "speedBoostWave": 3,
+    "ufoSwarmWave": 7
+  }
+}
+
+

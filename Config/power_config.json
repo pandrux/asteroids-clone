@@ -1,0 +1,12 @@
+{
+  "maxPower": 100.0,
+  "rechargeRate": 20.0,
+  "thrustDrainRate": 15.0,
+  "fireCost": 10.0,
+  "forceFieldCost": 30.0,
+  "forceFieldDrainRate": 25.0,
+  "forceFieldDuration": 3.0,
+  "hyperspaceCost": 50.0
+}
+
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file describes a SpriteFont for MonoGame.
+It uses a system font (Arial) so you don't need any external files.
+-->
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics">
+  <Asset Type="Graphics:FontDescription">
+
+    <!-- The font family name (must be installed on your system) -->
+    <FontName>Arial</FontName>
+
+    <!-- Font size in points -->
+    <Size>18</Size>
+
+    <!-- Spacing between characters -->
+    <Spacing>0</Spacing>
+
+    <!-- Whether to use kerning -->
+    <UseKerning>true</UseKerning>
+
+    <!-- Font style: Regular, Bold, Italic, or Bold Italic -->
+    <Style>Bold</Style>
+
+    <!-- Character regions to include -->
+    <CharacterRegions>
+      <CharacterRegion>
+        <!-- Basic ASCII characters (space through tilde) -->
+        <Start>&#32;</Start>
+        <End>&#126;</End>
+      </CharacterRegion>
+    </CharacterRegions>
+
+  </Asset>
+</XnaContent>

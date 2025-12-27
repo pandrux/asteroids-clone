@@ -1,0 +1,57 @@
+{
+  "maxParticles": 10000,
+  "templates": {
+    "explosion": {
+      "startColor": [255, 255, 255, 255],
+      "endColor": [255, 165, 0, 255],
+      "startSize": 5.0,
+      "endSize": 0.0,
+      "lifetime": 0.5,
+      "speed": 200.0,
+      "speedVariation": 100.0,
+      "sizeVariation": 2.0
+    },
+    "thrust": {
+      "startColor": [0, 255, 255, 255],
+      "endColor": [0, 0, 255, 255],
+      "startSize": 3.0,
+      "endSize": 0.0,
+      "lifetime": 0.3,
+      "speed": 150.0,
+      "speedVariation": 50.0,
+      "sizeVariation": 1.0
+    },
+    "shieldHit": {
+      "startColor": [173, 216, 230, 255],
+      "endColor": [255, 255, 255, 255],
+      "startSize": 8.0,
+      "endSize": 0.0,
+      "lifetime": 0.4,
+      "speed": 100.0,
+      "speedVariation": 50.0,
+      "sizeVariation": 3.0
+    },
+    "hyperspace": {
+      "startColor": [128, 0, 128, 255],
+      "endColor": [0, 0, 0, 0],
+      "startSize": 10.0,
+      "endSize": 0.0,
+      "lifetime": 1.0,
+      "speed": 300.0,
+      "speedVariation": 150.0,
+      "sizeVariation": 5.0
+    },
+    "powerUpCollect": {
+      "startColor": [255, 215, 0, 255],
+      "endColor": [255, 255, 0, 255],
+      "startSize": 6.0,
+      "endSize": 0.0,
+      "lifetime": 0.6,
+      "speed": 80.0,
+      "speedVariation": 40.0,
+      "sizeVariation": 2.0
+    }
+  }
+}
+
+

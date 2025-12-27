@@ -1,0 +1,24 @@
+# Claude Code
+.claude/
+
+# Build results
+bin/
+obj/
+publish/
+publish-single/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Packages
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Game data (user-specific)
+highscores.json

@@ -1,0 +1,30 @@
+{
+  "screenWidth": 1280,
+  "screenHeight": 720,
+  "targetFPS": 60,
+  "asteroid": {
+    "large": {
+      "radius": 40.0,
+      "pointValue": 20,
+      "splitCount": 2
+    },
+    "medium": {
+      "radius": 20.0,
+      "pointValue": 50,
+      "splitCount": 2
+    },
+    "small": {
+      "radius": 10.0,
+      "pointValue": 100,
+      "splitCount": 0
+    }
+  },
+  "ship": {
+    "rotationSpeed": 5.0,
+    "thrustForce": 300.0,
+    "maxSpeed": 400.0,
+    "drag": 0.98
+  }
+}
+
+

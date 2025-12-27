@@ -1,0 +1,65 @@
+{
+  "large": {
+    "pointValue": 200,
+    "health": 3,
+    "radius": 30.0,
+    "speed": 50.0,
+    "fireCooldown": 2.0
+  },
+  "small": {
+    "pointValue": 1000,
+    "health": 1,
+    "radius": 20.0,
+    "speed": 150.0,
+    "fireCooldown": 1.0
+  },
+  "hunter": {
+    "pointValue": 300,
+    "health": 2,
+    "radius": 25.0,
+    "speed": 80.0,
+    "fireCooldown": 1.5
+  },
+  "bomber": {
+    "pointValue": 250,
+    "health": 2,
+    "radius": 25.0,
+    "speed": 40.0,
+    "fireCooldown": 2.0,
+    "mineDropInterval": 3.0
+  },
+  "shielded": {
+    "pointValue": 400,
+    "health": 3,
+    "radius": 25.0,
+    "speed": 60.0,
+    "fireCooldown": 1.8,
+    "shieldRegenTime": 5.0
+  },
+  "phase": {
+    "pointValue": 350,
+    "health": 2,
+    "radius": 25.0,
+    "speed": 70.0,
+    "fireCooldown": 1.5,
+    "phaseInterval": 4.0
+  },
+  "carrier": {
+    "pointValue": 500,
+    "health": 4,
+    "radius": 35.0,
+    "speed": 35.0,
+    "fireCooldown": 2.0,
+    "droneSpawnInterval": 5.0,
+    "maxDrones": 3
+  },
+  "boss": {
+    "pointValue": 5000,
+    "health": 20,
+    "radius": 50.0,
+    "speed": 40.0,
+    "fireCooldown": 0.8
+  }
+}
+
+
